@@ -11,9 +11,11 @@ FileUtility::initialize(FILENAME);
 $orderList = new OrderList();
 
 // handle the form
-if(isset($_POST["submit"])){
-  $orderList->parseWrite();
-  FileUtility::write($orderData->addQuery);
+if (isset($_POST["submit"])) {
+  if (Validate::validateInput()) {
+    $orderList->parseWrite(Validate::$form_value);
+    FileUtility::write($orderList->addQuery);
+  }
 }
 
 
@@ -24,5 +26,5 @@ $orderList->parseRead($content);
 Page::header();
 Page::form();
 Page::statistics();
-Page::main($orderList->readQuery);
+Page::main($orderList->readQuery,Validate::$valid_status);
 Page::footer();

@@ -44,9 +44,11 @@ class FileUtility
     return $contents;
   }
 
-  static function write($data)
+  static function write($dataLine)
   {
     try {
+      $fh = self::open('a');
+      fwrite($fh,$dataLine);
     } catch (Exception $e) {
       Page::$notifications[] = array($e->getMessage());
       error_log($e->getMessage());

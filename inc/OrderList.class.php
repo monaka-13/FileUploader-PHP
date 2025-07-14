@@ -23,8 +23,9 @@ class OrderList
   }
 
   // The function below sets the string to be used for writing
-  function parseWrite()
+  function parseWrite($data)
   {
-    $this->$addQuery = new Order("", "", 0);
+    $this->addQuery = "\n" . $data["customerID"] . ", " . $data["membership"] . ", " . $data["amount"];
+    echo $this->addQuery;
   }
 }

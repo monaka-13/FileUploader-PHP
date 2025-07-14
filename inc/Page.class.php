@@ -114,9 +114,11 @@ class Page
 
     // This function displays the main section containing
     // the notification and the table
-    static function main($dataList)
+    static function main($dataList, $notifications)
     // static function main($data, $discounts)
-    { ?>
+    {
+      self::$notifications = $notifications;
+  ?>
     <section class="main">
       <?php
       if (!empty(self::$notifications)) {
@@ -149,20 +151,20 @@ class Page
           echo $data->amount;
           echo "</td><td>$";
           self::calculateSales($data);
-          echo "</td></tr></tbody>";
-          ;
+          echo "</td></tr></tbody>";;
         }
         ?>
       </table>
     </section>
   <?php }
-    static function calculateSales($data) {
+    static function calculateSales($data)
+    {
       $sales = $data->amount * ITEM_COST;
       // if the membership is Gold
-      if($data->member=="Gold"){
+      if ($data->member == "Gold") {
         $sales *= (1 - DISCOUNT_INFO["goldDiscount"]);
       }
-      echo(number_format($sales,2));
+      echo (number_format($sales, 2));
     }
 
     // This function displays the notifications
@@ -170,8 +172,15 @@ class Page
     { ?>
     <div class="error" style="display: block;">
       <h4>Notification</h4>
-      This is to notify whether the data has been submitted
-      or have errors...
+      <ul>
+        <?php
+        foreach (self::$notifications as $n) {
+          echo "<li>";
+          echo $n;
+          echo "</li>";
+        }
+        ?>
+      </ul>
     </div>
 <?php }
   }
