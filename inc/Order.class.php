@@ -1,5 +1,14 @@
 <?php
+class Order
+{
+  public $customerID = "";
+  public $member = "";
+  public $amount = 0;
 
-// Implement the Order class with its constructor
-
-?>
+  function __construct($customerID, $member, $amount)
+  {
+    $this->customerID = $customerID;
+    $this->member = $member;
+    $this->amount = $amount;
+  }
+}

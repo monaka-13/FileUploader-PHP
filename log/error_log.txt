@@ -1,0 +1,16 @@
+[14-Jul-2025 10:29:11 America/Vancouver] PHP Warning:  Undefined variable $dataList in C:\xampp\htdocs\demo\FileUploader-PHP\app.php on line 27
+[14-Jul-2025 10:31:42 America/Vancouver] PHP Warning:  Array to string conversion in C:\xampp\htdocs\demo\FileUploader-PHP\app.php on line 28
+[14-Jul-2025 11:00:47 America/Vancouver] PHP Fatal error:  Uncaught Error: Cannot use object of type Order as array in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php:146
+Stack trace:
+#0 C:\xampp\htdocs\demo\FileUploader-PHP\app.php(27): Page::main(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 146
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:02:27 America/Vancouver] PHP Warning:  Undefined property: Order::$membership in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 148
+[14-Jul-2025 11:05:09 America/Vancouver] PHP Warning:  Array to string conversion in C:\xampp\htdocs\demo\FileUploader-PHP\inc\Page.class.php on line 123
