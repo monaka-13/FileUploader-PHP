@@ -25,6 +25,6 @@ $orderList->parseRead($content);
 // display the page
 Page::header();
 Page::form();
-Page::statistics();
+Page::statistics($orderList->readQuery);
 Page::main($orderList->readQuery,Validate::$valid_status);
 Page::footer();

@@ -73,39 +73,47 @@ class Page
   <?php }
 
     // This function displays the page's statistics
-    static function statistics()
-    { ?>
+    static function statistics($dataList)
+    {
+      $orderNumber = count($dataList);
+      $totalAmount = 0;
+      $totalSales = 0;
+      foreach ($dataList as $data) {
+        $totalAmount += $data->amount;
+        $totalSales += self::calculateSales($data);
+      }
+  ?>
     <section class="statistics">
       <h2>Statistics</h2>
       <table>
         <tbody>
           <tr>
             <th>Number of Orders</th>
-            <td>?? (please calculate)</td>
+            <td><?php echo $orderNumber; ?></td>
           </tr>
         </tbody>
         <tbody>
           <tr>
             <th>Total Amount</th>
-            <td>??</td>
+            <td><?php echo $totalAmount; ?></td>
           </tr>
         </tbody>
         <tbody>
           <tr>
             <th>Average Amount</th>
-            <td>??</td>
+            <td><?php echo number_format($totalAmount / $orderNumber, 2); ?></td>
           </tr>
         </tbody>
         <tbody>
           <tr>
             <th>Total Sales</th>
-            <td>??</td>
+            <td><?php echo $totalSales; ?></td>
           </tr>
         </tbody>
         <tbody>
           <tr>
             <th>Average Sales</th>
-            <td>??</td>
+            <td><?php echo number_format($totalSales / $orderNumber, 2); ?></td>
           </tr>
         </tbody>
       </table>
@@ -150,7 +158,7 @@ class Page
           echo "</td><td>";
           echo $data->amount;
           echo "</td><td>$";
-          self::calculateSales($data);
+          echo (number_format(self::calculateSales($data), 2));
           echo "</td></tr></tbody>";;
         }
         ?>
@@ -164,7 +172,7 @@ class Page
       if ($data->member == "Gold") {
         $sales *= (1 - DISCOUNT_INFO["goldDiscount"]);
       }
-      echo (number_format($sales, 2));
+      return $sales;
     }
 
     // This function displays the notifications
