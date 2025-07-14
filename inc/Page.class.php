@@ -140,7 +140,7 @@ class Page
           echo "<tbody class=";
           echo $i % 2 == 1 ? "oddRow" : "evenRow";
           echo "><tr><td>";
-          echo $i + 1;
+          echo ++$i;
           echo "</td><td>";
           echo $data->customerID;
           echo "</td><td>";
@@ -150,7 +150,7 @@ class Page
           echo "</td><td>$";
           self::calculateSales($data);
           echo "</td></tr></tbody>";
-          $i++;
+          ;
         }
         ?>
       </table>
